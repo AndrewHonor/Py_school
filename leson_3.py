@@ -1,9 +1,13 @@
 import math
-def true_Namber (text_print):
+
+
+def true_Namber(text_print):
     while True:
         print(text_print, end='')
         true_var = input()
         if true_var.isdigit(): return true_var
+
+
 def aple_task():
     text01 = 'Скільки школярів? '
     text02 = 'А скільки яблук є? '
@@ -28,9 +32,10 @@ def school_desks():
     miniPeople_classrooms = ()
     while len(miniPeople_classrooms) < 3:
         miniPeople_classrooms = ()
-        miniPeople_classrooms = input("Введіть скільки дітей начається в трьох класах математики через пробіл? ").split(" ")
+        miniPeople_classrooms = input("Введіть скільки дітей начається в трьох класах математики через пробіл? ").split(
+            " ")
         miniPeople_classrooms = ' '.join(miniPeople_classrooms).split()
-    classroom = ('першого', 'другого','третього')
+    classroom = ('першого', 'другого', 'третього')
     # print(miniPeople_classrooms)
     school_desks_classrooms = []
     print("Кількість парт яку потрібно закупити для ", end='')
@@ -43,7 +48,7 @@ def revers_var():
     text01 = 'Введіть багатозначне число для проведення реверсу: '
     var_original = int(true_Namber(text01))
     var_revers = 0
-    while var_original >0:
+    while var_original > 0:
         count = var_original % 10
         var_original = var_original // 10
         var_revers = var_revers * 10
@@ -51,9 +56,21 @@ def revers_var():
     print(f'Реверсне число: {var_revers}')
 
 
+def oclock_t():
+    text01 = 'Введіть кількість секунд які пройшли з початку дня: '
+    sec_tim = int(true_Namber(text01))
+    hour = sec_tim // 3600
+    sec_tim = sec_tim % 3600
+    minutes = sec_tim // 60
+    sec_tim = sec_tim % 60
+    print(f'Пройшло {hour}:{minutes}:{sec_tim} часу')
+
+
+# true_Namber()
 aple_task()
 print()
 school_desks()
 print()
 revers_var()
-#true_Namber()
+print()
+oclock_t()
