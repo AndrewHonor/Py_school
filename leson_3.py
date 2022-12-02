@@ -1,13 +1,14 @@
 import math
-def true_Namber (var_namber, text_print):
+def true_Namber (text_print):
     while True:
         print(text_print, end='')
         true_var = input()
-        if true_var.isdigit() : return true_var
+        if true_var.isdigit(): return true_var
 def aple_task():
     text01 = 'Скільки школярів? '
-    miniPeople = true_Namber()
-    apples = int(input('А скільки яблук є? '))
+    text02 = 'А скільки яблук є? '
+    miniPeople = int(true_Namber(text01))
+    apples = int(true_Namber(text02))
     apples_on_miniPeople = apples // miniPeople
     if apples % miniPeople == 0:
         print(f'Дітям достанеться по {apples_on_miniPeople}',
@@ -17,10 +18,10 @@ def aple_task():
                                   -1] == '1' else 'яблука.'))
     else:
         print(f'Дітям достанеться по {apples_on_miniPeople}',
-              'яблуку.' if apples_on_miniPeople == 1 else (
-                  'яблук.' if 4 < apples_on_miniPeople < 21 or apples_on_miniPeople % 10 == 0 or
+              'яблуку,' if apples_on_miniPeople == 1 else (
+                  'яблук,' if 4 < apples_on_miniPeople < 21 or apples_on_miniPeople % 10 == 0 or
                               str(apples_on_miniPeople)[
-                                  -1] == '1' else 'яблука.'), f'і {apples % miniPeople} залишиться в кошику.')
+                                  -1] == '1' else 'яблука,'), f'і {apples % miniPeople} залишиться в кошику.')
 
 
 def school_desks():
@@ -39,7 +40,8 @@ def school_desks():
 
 
 def revers_var():
-    var_original = int(input('Введіть число: '))
+    text01 = 'Введіть число: '
+    var_original = int(true_Namber(text01))
     var_revers = 0
     while var_original >0:
         count = var_original % 10
@@ -49,7 +51,7 @@ def revers_var():
     print(f'Реверсне число: {var_revers}')
 
 
-aple_task()
-# school_desks()
-#revers_var()
+#aple_task()
+#school_desks()
+revers_var()
 #true_Namber()
