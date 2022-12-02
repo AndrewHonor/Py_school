@@ -33,6 +33,14 @@ def school_desks():
 
 
 def revers_var():
-    pass
+    var_original = int(input('Введіть число: '))
+    var_revers = 0
+    while var_original >0:
+        count = var_original % 10
+        var_original = var_original // 10
+        var_revers = var_revers + count
+    print(f'Реверсне число: {var_revers}')
+
 # aple_task()
-school_desks()
+# school_desks()
+revers_var()
