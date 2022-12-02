@@ -1,8 +1,12 @@
 import math
-def true_Namber ():
-    pass
+def true_Namber (var_namber, text_print):
+    while True:
+        print(text_print, end='')
+        true_var = input()
+        if true_var.isdigit() : return true_var
 def aple_task():
-    miniPeople = int(input('Скільки школярів? '))
+    text01 = 'Скільки школярів? '
+    miniPeople = true_Namber()
     apples = int(input('А скільки яблук є? '))
     apples_on_miniPeople = apples // miniPeople
     if apples % miniPeople == 0:
@@ -44,6 +48,8 @@ def revers_var():
         var_revers = var_revers + count
     print(f'Реверсне число: {var_revers}')
 
-# aple_task()
+
+aple_task()
 # school_desks()
-revers_var()
+#revers_var()
+#true_Namber()
