@@ -1,3 +1,4 @@
+import math
 def aple_task():
     miniPeople = int(input('Скільки школярів? '))
     apples = int(input('А скільки яблук є? '))
@@ -17,16 +18,21 @@ def aple_task():
 
 
 def school_desks():
-    miniPeople_classrooms = input("Введіть скільки дітей начається в класах математики через пробіл? ").split(" ")
+    miniPeople_classrooms = ()
+    while len(miniPeople_classrooms) < 3:
+        miniPeople_classrooms = ()
+        miniPeople_classrooms = input("Введіть скільки дітей начається в трьох класах математики через пробіл? ").split(" ")
+        miniPeople_classrooms = ' '.join(miniPeople_classrooms).split()
     classroom = ('першого', 'другого','третього')
     # print(miniPeople_classrooms)
     school_desks_classrooms = []
+    print("Кількість парт яку потрібно закупити для ", end='')
     for x in range(3):
-        school_desks_classrooms.append(round(int(miniPeople_classrooms[x]) / 2))
-    print("Потрібно закупити",end='')
-    for x in range(3):
-        print(f'{school_desks_classrooms[x]} парт для')
+        school_desks_classrooms.append(math.ceil(int(miniPeople_classrooms[x]) / 2))
+        print(f'{classroom[x]} класу - {school_desks_classrooms[x]} шт.')
 
 
+def revers_var():
+    pass
 # aple_task()
 school_desks()
