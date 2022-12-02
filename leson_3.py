@@ -1,4 +1,6 @@
 import math
+def true_Namber ():
+    pass
 def aple_task():
     miniPeople = int(input('Скільки школярів? '))
     apples = int(input('А скільки яблук є? '))
@@ -38,6 +40,7 @@ def revers_var():
     while var_original >0:
         count = var_original % 10
         var_original = var_original // 10
+        var_revers = var_revers * 10
         var_revers = var_revers + count
     print(f'Реверсне число: {var_revers}')
 
