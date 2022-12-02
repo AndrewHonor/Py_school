@@ -40,7 +40,7 @@ def school_desks():
 
 
 def revers_var():
-    text01 = 'Введіть число: '
+    text01 = 'Введіть багатозначне число для проведення реверсу: '
     var_original = int(true_Namber(text01))
     var_revers = 0
     while var_original >0:
@@ -51,7 +51,9 @@ def revers_var():
     print(f'Реверсне число: {var_revers}')
 
 
-#aple_task()
-#school_desks()
+aple_task()
+print()
+school_desks()
+print()
 revers_var()
 #true_Namber()
