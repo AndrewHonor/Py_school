@@ -43,20 +43,15 @@ def masha ():
     #
     #
     #
+    mas_mushrm = ['','ів','а']
     var_num = int(true_Namber('Введіть кількість грибів: '))
     count = 0
-    if var_num ==0:
+    if var_num ==0 or 5 <= var_num <= 19 or int(str(var_num)[-1]) ==0:
         count = 1
+    elif 2<= int(str(var_num)[-1]) <=4:
+        count = 2
     else:
-        if 5 <= var_num <= 19:
-            count = 1
-        else:
-            if 2<= int(str(var_num)[-1]) <=4:
-                pass
-            elif:
-                pass
-
-    mas_mushrm = ['','ів','а']
+        count = 0
     print(f'Маша нашла в лісі {var_num} гриб{mas_mushrm[count]}')
 #calc_supper()
 #square()
