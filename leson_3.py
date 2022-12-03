@@ -1,11 +1,7 @@
 import math
+from blb import true_Namber
 
 
-def true_Namber(text_print):
-    while True:
-        print(text_print, end='')
-        true_var = input()
-        if true_var.isdigit(): return true_var
 
 
 def aple_task():

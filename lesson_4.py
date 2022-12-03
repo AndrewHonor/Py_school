@@ -1,7 +1,9 @@
+from blb import true_Namber
 def calc_supper():
+    text01 = 'Введіть що там обрахувати потрібно: '
     # Написать калькулятор для простых операций(+,-,*,/,**),
     print("Супер калькулятор")
-    var_char = input()
+    var_char = true_Namber(text01)
     var_char = eval(var_char)
     print(var_char)
 
@@ -14,8 +16,8 @@ def square():
             break
         print(x ** 2, end=" ")
 
-def simple_Num(a):
-
+def simple_Num():
+    pass
 
 
 #calc_supper()
