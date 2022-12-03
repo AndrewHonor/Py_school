@@ -14,7 +14,10 @@ def square():
             break
         print(x ** 2, end=" ")
 
+def simple_Num(a):
+
 
 
 #calc_supper()
 square()
+simple_Num()
