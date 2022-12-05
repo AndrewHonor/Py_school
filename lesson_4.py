@@ -1,4 +1,6 @@
 from blb import true_Namber
+
+
 def calc_supper():
     # Написать калькулятор для простых операций(+,-,*,/,**),
     print("Супер калькулятор")
@@ -6,54 +8,45 @@ def calc_supper():
     var_num = eval(var_num)
     print(var_num)
 
+def calc_mini ():
+    print("Міні калькулятор")
+    var_num = input('Введіть що там потрібно обрахувати: ')
 
-# По данному целому числу N распечатайте все квадраты натуральных чисел, не превосходящие N, в порядке возрастания.
+
 def square():
-    print("генератор квадратних чисел.")
-    text01 = 'Введіть границю квадратних натуральних чисел: '
-    var_num = int(true_Namber(text01))
-    for x in range(1,var_num):
+    print("Генератор квадратних чисел.")
+    var_num = int(true_Namber('Введіть границю квадратних натуральних чисел: '))
+    for x in range(1, var_num):
         if x ** 2 >= var_num:
             break
         print(x ** 2, end=" ")
 
+
 def simple_Num():
     print('Перевірка числа на простоту')
     var_num = int(true_Namber('Введіть число: '))
-    for i in range(2, (var_num // 2) + 1):
-        if var_num % i == 0:
-            return print('Число НЕ просте')
-        else: return print("Число просте")
+    if var_num % 2 == 0:
+        return var_num == 2
+    count = 3
+    while count * count <= var_num and var_num % count != 0:
+        count += 2
+    return count * count > var_num
 
 
-def masha ():
-    #0- грибів
-    #1 - гриб
-    #2-4 - гриба
-    #5-9 - грибів
-    #21 - гриб
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    mas_mushrm = ['','ів','а']
+def masha():
+    mas_mushrm = ['', 'ів', 'а']
     var_num = int(true_Namber('Введіть кількість грибів: '))
     count = 0
-    if var_num ==0 or 5 <= var_num <= 19 or int(str(var_num)[-1]) ==0:
+    if var_num == 0 or 5 <= var_num <= 19 or int(str(var_num)[-1]) == 0 or 4 < int(str(var_num)[-1]) <= 9:
         count = 1
-    elif 2<= int(str(var_num)[-1]) <=4:
+    elif 2 <= int(str(var_num)[-1]) <= 4:
         count = 2
     else:
         count = 0
     print(f'Маша нашла в лісі {var_num} гриб{mas_mushrm[count]}')
-#calc_supper()
+
+
+#print("Число просте" if simple_Num() else "число не просте")
+calc_supper()
 #square()
-#simple_Num()
-masha()
+#masha()
