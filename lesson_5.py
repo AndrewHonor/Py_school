@@ -89,3 +89,8 @@ def delta_d():
 
 
 
+range_var()
+delta_a()
+delta_b()
+delta_c()
+delta_d()

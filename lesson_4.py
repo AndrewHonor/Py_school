@@ -39,7 +39,7 @@ def masha ():
     else:
         count = 0
     print(f'Маша нашла в лісі {var_num} гриб{mas_mushrm[count]}')
-#calc_supper()
-#square()
-#simple_Num()
-#masha()
+calc_supper()
+square()
+simple_Num()
+masha()
