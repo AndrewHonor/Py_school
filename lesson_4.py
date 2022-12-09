@@ -1,6 +1,4 @@
 from blb import true_namber
-
-
 def calc_supper():
     # Написать калькулятор для простых операций(+,-,*,/,**),
     print("Супер калькулятор")
@@ -8,21 +6,18 @@ def calc_supper():
     var_num = eval(var_num)
     print(var_num)
 
-def calc_mini ():
-    print("Міні калькулятор")
-    var_num = input('Введіть що там потрібно обрахувати: ')
 
-
+# По данному целому числу N распечатайте все квадраты натуральных чисел, не превосходящие N, в порядке возрастания.
 def square():
-    print("Генератор квадратних чисел.")
-    var_num = int(true_namber('Введіть границю квадратних натуральних чисел: '))
-    for x in range(1, var_num):
+    print("генератор квадратних чисел.")
+    text01 = 'Введіть границю квадратних натуральних чисел: '
+    var_num = int(true_namber(text01))
+    for x in range(1,var_num):
         if x ** 2 >= var_num:
             break
         print(x ** 2, end=" ")
 
-
-def simple_Num():
+def simple_num():
     print('Перевірка числа на простоту')
     var_num = int(true_namber('Введіть число: '))
     if var_num % 2 == 0:
@@ -33,7 +28,7 @@ def simple_Num():
     return count * count > var_num
 
 
-def masha():
+def masha ():
     mas_mushrm = ['', 'ів', 'а']
     var_num = int(true_namber('Введіть кількість грибів: '))
     count = 0
@@ -44,9 +39,7 @@ def masha():
     else:
         count = 0
     print(f'Маша нашла в лісі {var_num} гриб{mas_mushrm[count]}')
-
-
-#print("Число просте" if simple_Num() else "число не просте")
-calc_supper()
+#calc_supper()
 #square()
+#simple_Num()
 #masha()
