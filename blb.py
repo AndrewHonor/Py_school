@@ -300,7 +300,7 @@ star_letters = [[['    *    '],
                  [' помри ! ']]]
 
 
-def true_Namber(text_print):
+def true_namber(text_print):
     while True:
         print(text_print, end='')
         true_var = input()

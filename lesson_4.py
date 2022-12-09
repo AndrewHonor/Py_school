@@ -1,4 +1,4 @@
-from blb import true_Namber
+from blb import true_namber
 
 
 def calc_supper():
@@ -15,7 +15,7 @@ def calc_mini ():
 
 def square():
     print("Генератор квадратних чисел.")
-    var_num = int(true_Namber('Введіть границю квадратних натуральних чисел: '))
+    var_num = int(true_namber('Введіть границю квадратних натуральних чисел: '))
     for x in range(1, var_num):
         if x ** 2 >= var_num:
             break
@@ -24,7 +24,7 @@ def square():
 
 def simple_Num():
     print('Перевірка числа на простоту')
-    var_num = int(true_Namber('Введіть число: '))
+    var_num = int(true_namber('Введіть число: '))
     if var_num % 2 == 0:
         return var_num == 2
     count = 3
@@ -35,7 +35,7 @@ def simple_Num():
 
 def masha():
     mas_mushrm = ['', 'ів', 'а']
-    var_num = int(true_Namber('Введіть кількість грибів: '))
+    var_num = int(true_namber('Введіть кількість грибів: '))
     count = 0
     if var_num == 0 or 5 <= var_num <= 19 or int(str(var_num)[-1]) == 0 or 4 < int(str(var_num)[-1]) <= 9:
         count = 1
