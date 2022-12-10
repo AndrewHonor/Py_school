@@ -49,11 +49,14 @@ def task_5():
     my_list.append(0)
     for x in reversed(range(len(my_list))):
         if x > k_id_ml:
-            my_list[x] = my_list[x-1]
+            my_list[x] = my_list[x - 1]
         elif x == k_id_ml:
             my_list[x] = var_num
-
     print(f'Тепер список:\t\t', *my_list)
 
+
 def task_6():
-    pass
+    my_list_1, my_list_2 = [randint(10, 99) for _ in range(50)], [randint(10, 99) for _ in range(50)]
+    print('Список_1', my_list_1, 'Унікальних значень: ', len(set(my_list_1)), 'Список_2', my_list_2,
+          'Унікальних значень: ', len(set(my_list_2)), sep='\n')
+    print()
