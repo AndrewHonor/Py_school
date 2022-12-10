@@ -32,14 +32,28 @@ def task_4():
     for x in range(len(my_list)):
         if x > k_id_ml:
             my_list[x - 1] = my_list[x]
-    my_list.pop()  # pop без оператора
+    my_list.pop()  ###
     print()
     print(f'Тепер список без K:\t', *my_list)
 
 
 def task_5():
-    pass
+    my_list = [randint(10, 99) for _ in range(randint(5, 25))]
+    k_id_ml = randint(0, len(my_list) - 1)
+    var_num = randint(10, 99)
+    count = '_'
+    print('Дано список чисел: \t', *my_list)
+    print(
+        f'Ось в це місце: ___{count * k_id_ml * 3} ^ {count * (len(my_list) * 3 - k_id_ml * 3 - 2)}За індексом [{k_id_ml}]')
+    print(f'Вставити ось це: {var_num} число')
+    my_list.append(0)
+    for x in reversed(range(len(my_list))):
+        if x > k_id_ml:
+            my_list[x] = my_list[x-1]
+        elif x == k_id_ml:
+            my_list[x] = var_num
 
+    print(f'Тепер список:\t\t', *my_list)
 
 def task_6():
     pass
