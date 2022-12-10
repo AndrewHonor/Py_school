@@ -13,7 +13,12 @@ def task_2():
 
 
 def task_3():
-    pass
+    my_list = [randint(1, 120) for _ in range(randint(1, 5))]
+    if len(my_list) > 2:
+        my_list.append(my_list[-1] + my_list[-2])
+    else:
+        my_list.append(0)
+    return my_list
 
 
 def task_4():
