@@ -3,13 +3,13 @@ from random import randint
 
 def task_1():
     my_list = [randint(1, 120) for _ in range(100)]
-    return [x for x in my_list if x > 100]
+    return print([x for x in my_list if x > 100])
 
 
 def task_2():
     my_list = [randint(1, 120) for _ in range(100)]
     my_results = [x for x in my_list if x > 100]
-    return my_results
+    return print(my_results)
 
 
 def task_3():
@@ -18,7 +18,7 @@ def task_3():
         my_list.append(my_list[-1] + my_list[-2])
     else:
         my_list.append(0)
-    return my_list
+    return print(my_list)
 
 
 def task_4():
