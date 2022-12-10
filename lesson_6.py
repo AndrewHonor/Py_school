@@ -22,7 +22,19 @@ def task_3():
 
 
 def task_4():
-    pass
+    my_list = [randint(10, 99) for _ in range(randint(5, 25))]
+    k_id_ml = randint(0, len(my_list) - 1)
+    print(k_id_ml)
+    count = ' '
+    print('Дано список чисел: \t', *my_list[:k_id_ml], f'[{my_list[k_id_ml]}]', *my_list[k_id_ml + 1:])
+    print(f'Дано індекс K: {k_id_ml}\t {count * k_id_ml * 3} ^  -- Ось він')
+    print(f'Ми його обережно забрали [[{my_list[k_id_ml]}]]')
+    for x in range(len(my_list)):
+        if x > k_id_ml:
+            my_list[x - 1] = my_list[x]
+    my_list.pop()  # pop без оператора
+    print()
+    print(f'Тепер список без K:\t', *my_list)
 
 
 def task_5():
