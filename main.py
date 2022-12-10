@@ -1,16 +1,8 @@
-from lesson_4 import *
-from lesson_5 import *
-square()
+from lesson_6 import *
 
-if simple_num() == True:
-    print('Число Просте')
-else:
-    print('Число НЕ Просте')
-print()
-masha()
-print()
-range_var()
-delta_a()
-delta_b()
-delta_c()
-delta_d()
+task_1()
+# task_2()
+# task_3()
+# task_4()
+# task_5()
+# task_6()
