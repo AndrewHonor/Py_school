@@ -28,7 +28,7 @@ def delta_b():
 
 def delta_c():
     var_nam = int(true_namber('Введіть величину трикутника_C: '))
-    mass_l_u = [[' '] * var_nam for i in range(var_nam)]
+    mass_l_u = [[[' '] * var_nam for i in range(var_nam)]]
     mass_r_u = [[' '] * var_nam for i in range(var_nam)]
     mass_l_d = [[' '] * var_nam for i in range(var_nam-1)]
     mass_r_d = [[' '] * var_nam for i in range(var_nam-1)]
