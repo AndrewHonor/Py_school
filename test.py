@@ -1,11 +1,21 @@
-print(eval('(1 + 2) * (2 + ( 4 + 5 ) )+ 6'))
-# exec("a =" + input('>>>') + "\nprint(a)")
-# var_num = input(">>>")
+print('>>>', eval('1+2+(10+((1+2)+(1+12))*12)'))
+exec("a =" + '1+2+(10+((1+2)+(1+12))*12)' + "\nprint(a)")
+var_num = input(">>>")
 ver_test = '0123456789'
 oper_test = '()*/+-'
-var_num = '1+2+10+(1+2)+1+(12+12)'
+
+
+# var_num = '1+2+(10+((1+2)+(1+12))*12)'
 # var_num = '( 1 + 2 ) * ( 2 + ( 4 + 5 ) ) + 6'
 
+
+def test_error(xxx):
+    xxx = xxx.replace(' ', '')
+    for x in range(1, len(xxx)):
+        if xxx[x] == '(' and xxx[x - 1] in ver_test:
+            print('>>>', 'Перед "(" не має операнда')
+            return
+    return xxx
 
 
 def pars(xxx):
@@ -21,10 +31,10 @@ def pars(xxx):
         else:
             if xxx[x] in ver_test:
                 tm_variable = tm_variable + xxx[x]
+    tm_variable = tm_variable.split()
     return tm_variable
 
 
-# count = []
 def calculation(xxx):
     tm_variable = 0
     while len(xxx) >= 3:
@@ -67,13 +77,13 @@ def alternation(xxx):
                         coun = xxx[t_x + 1:t_n]
                         xxx = xxx[:t_x] + calculation(coun) + xxx[t_n + 1:]
                         break
-                break
 
     return xxx
 
-
-# mas_var = alternation(mas_var)
-# print(mas_var)
-mas_var = pars(var_num.split())
-print(calculation(mas_var))
-#print(pars(var_num))
+var_num = test_error(var_num)
+print(var_num)
+var_num = pars(var_num)
+print(var_num)
+print(alternation(var_num))
+var_num = alternation(var_num)
+print(calculation(var_num))
