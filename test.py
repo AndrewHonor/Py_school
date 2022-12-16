@@ -1,6 +1,5 @@
-print('>>>', eval('1+2+(10+((1+2)+(1+12))*12)'))
+print('>>>', eval('1+2+(10+((1+2)+(1+12))+12)'))
 exec("a =" + '1+2+(10+((1+2)+(1+12))*12)' + "\nprint(a)")
-var_num = input(">>>")
 ver_test = '0123456789'
 oper_test = '()*/+-'
 
@@ -9,12 +8,23 @@ oper_test = '()*/+-'
 # var_num = '( 1 + 2 ) * ( 2 + ( 4 + 5 ) ) + 6'
 
 
-def test_error(xxx):
-    xxx = xxx.replace(' ', '')
-    for x in range(1, len(xxx)):
-        if xxx[x] == '(' and xxx[x - 1] in ver_test:
-            print('>>>', 'Перед "(" не має операнда')
-            return
+def test_error():
+    count = 0
+    while count == 0:
+        xxx = input('>>>')
+        xxx = xxx.replace(' ', '')
+        for x in range(1, len(xxx)):
+            if xxx[x] == '(' and xxx[x - 1] in ver_test:
+                print('>>>', 'Перед "(" не має операнда')
+                count == 0
+                break
+            if (xxx[x] in oper_test[2:] and (xxx[x - 1] in oper_test[2:]) or (xxx[x] in oper_test[2:] and xxx[x + 1] in oper_test[2:])):
+                print('>>>', 'Випадково записані один з операндів декілька разів:', *oper_test[2:])
+                count == 0
+                break
+            else:
+                count = 1
+
     return xxx
 
 
@@ -80,10 +90,8 @@ def alternation(xxx):
 
     return xxx
 
-var_num = test_error(var_num)
-print(var_num)
+
+var_num = test_error()
 var_num = pars(var_num)
-print(var_num)
-print(alternation(var_num))
 var_num = alternation(var_num)
 print(calculation(var_num))
