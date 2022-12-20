@@ -14,9 +14,9 @@ def delta_a():
     for i in range(var_nam + 1):
         for j in range(2 * var_nam + 1):
             if var_nam - j == i or j - var_nam == i or i == var_nam:
-                print('*', end='')
+                print('* ', end='')
             else:
-                print(' ', end='')
+                print('  ', end='')
         print()
 
 
@@ -28,7 +28,7 @@ def delta_b():
 
 def delta_c():
     var_nam = int(true_namber('Введіть величину трикутника_C: '))
-    mass_l_u = [[[' '] * var_nam for i in range(var_nam)]]
+    mass_l_u = [[' '] * var_nam for i in range(var_nam)]
     mass_r_u = [[' '] * var_nam for i in range(var_nam)]
     mass_l_d = [[' '] * var_nam for i in range(var_nam-1)]
     mass_r_d = [[' '] * var_nam for i in range(var_nam-1)]
@@ -89,8 +89,5 @@ def delta_d():
 
 
 
-range_var()
-delta_a()
-delta_b()
+
 delta_c()
-delta_d()
