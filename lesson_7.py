@@ -53,8 +53,8 @@ def task_7():
     l_limit = "o"
     r_limit = "g"
     sub_str = ''
-    my_str = my_str[:my_str.index(l_limit):-1]
-    sub_str = my_str[:my_str.index(r_limit):-1]
+    my_str = my_str[:my_str.index('o'):-1]
+    sub_str = my_str[:my_str.index('g'):-1]
     print(sub_str)
     print()
 

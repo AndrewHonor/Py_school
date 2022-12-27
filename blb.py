@@ -304,4 +304,5 @@ def true_namber(text_print):
     while True:
         print(text_print, end='')
         true_var = input()
-        if true_var.isdigit(): return true_var
+        if true_var.isdigit():
+            return true_var
