@@ -1,7 +1,9 @@
-print('>>>', eval('1+2+(10+((1+2)+(1+12))+12)'))
-test_value = '1+2+(10+((1+2)+(1+12))+12)'
+print('>>>', eval('1+(2+(10+((1+2)+(1+12))+12))'))
+test_value = '1+(2+(10+((1+2)+(1+12))+12))'
 ver_test = '0123456789'
 oper_test = '()*/+-'
+test_error = False
+
 
 def pars(xxx):
     tm_variable = ''
@@ -20,35 +22,91 @@ def pars(xxx):
     return tm_variable
 
 
-
-def pars_bkt(xxx):
+def pars_error(xxx):
     sing_lft = 0
     sing_rght = 0
     for sing in xxx:
         if sing == '(':
-            sing_lft +=1
+            sing_lft += 1
         if sing == ')':
-            sing_rght +=1
-    if sing_rght == sing_lft:
-        return True
-    else:
-        print("Вирадення не має однакову кількість скобок")
+            sing_rght += 1
+    if sing_rght != sing_lft:
+        print("Вираження має не однакову кількість скобок")
         return False
-
-def pars_oprtr(xxx):
-    if xxx[0] in oper_test:
-        print("Вираження не може розпочинатися з із знаків '+', '-','*','/'")
+    if xxx[0] in oper_test[2:]:
+        print("Вираження не може розпочинатися з із оператору '+', '-','*','/'")
         return False
-    for sing in range(1,len(xxx)-1):
-        if xxx[sing] in oper_test[:2]:
-            if xxx[sing-1] in oper_test[:2] or xxx[sing+1] in oper_test[:2]:
-                print("Вираження має декілька операндів підряд")
+    for sing in range(1, len(xxx) - 1):
+        if xxx[sing] in oper_test[2:] and (xxx[sing - 1] in oper_test[2:] or xxx[sing + 1] in oper_test[2:]):
+            print("Вираження має декілька операторів підряд")
             return False
+    for sing in range(1, len(xxx)):
+        if xxx[sing] in ')' and (xxx[sing - 1] in oper_test[2:]):
+            print('Перед ")" не може бути оператора')
+            return False
+        if xxx[sing] in '(' and (xxx[sing + 1] in oper_test[2:]):
+            print('Після "(" не може бути оператора')
+            return False
+    return True
 
 
+def bkt(xxx):
+    while '(' in xxx:
+        sing_lft = []
+        sing_rght = []
+        for sing in range(len(xxx)):
+            if xxx[sing] == '(':
+                sing_lft.append(sing)
+            elif xxx[sing] == ')':
+                sing_rght.append(sing)
+
+        ind_lft = sing_lft.pop()
+        ind_rght = 0
+        for x in range(len(sing_rght)):
+            if sing_rght[x] > ind_lft:
+                ind_rght = sing_rght.pop(x)
+                break
+        coun = xxx[ind_lft + 1:ind_rght]
+        xxx = xxx[:ind_lft] + operator(coun) + xxx[ind_rght + 1:]
+    return xxx
+    # print(sing_lft,sing_rght,sep='\n')
 
 
+def operator(xxx):
+    tm_variable = 0
+    while len(xxx) >= 3:
+        if '*' in xxx:
+            tm_variable = [int(xxx[xxx.index('*') - 1]) * int(xxx[xxx.index('*') + 1])]
+            if len(xxx) > 3:
+                xxx = xxx[:xxx.index('*') - 1] + tm_variable + xxx[xxx.index('*') + 2:]
+            else:
+                xxx = tm_variable
+        if '/' in xxx:
+            tm_variable = [int(xxx[xxx.index('/') - 1]) / int(xxx[xxx.index('/') + 1])]
+            if len(xxx) > 3:
+                xxx = xxx[:xxx.index('/') - 1] + tm_variable + xxx[xxx.index('/') + 2:]
+            else:
+                xxx = tm_variable
+        if '+' in xxx:
+            tm_variable = [int(xxx[xxx.index('+') - 1]) + int(xxx[xxx.index('+') + 1])]
+            if len(xxx) > 3:
+                xxx = xxx[:xxx.index('+') - 1] + tm_variable + xxx[xxx.index('+') + 2:]
+            else:
+                xxx = tm_variable
+        if '-' in xxx:
+            tm_variable = [int(xxx[xxx.index('-') - 1]) - int(xxx[xxx.index('-') + 1])]
+            if len(xxx) > 3:
+                xxx = xxx[:xxx.index('-') - 1] + tm_variable + xxx[xxx.index('-') + 2:]
+            else:
+                xxx = tm_variable
+    return xxx
 
 
-print(pars(test_value))
-pars_oprtr(pars(test_value))
+while test_error == False:
+    varchar = pars(input("Введіть обрахунки: "))
+    test_error = pars_error(varchar)
+varchar = bkt(varchar)
+if len(varchar) > 1:
+    print(*operator(varchar))
+else:
+    print(*varchar)
