@@ -1,5 +1,5 @@
 import os
-
+current_dir = os.getcwd()
 
 class Directory:
     def __init__(self, directory):
@@ -46,13 +46,14 @@ class Directory:
         self.directory_dict = self.create_directory_dict()
         print(self.directory_dict)
 
+
 # Створення об'єкту класу Directory для роботи з вказаною директорією
-directory_obj = Directory('C:/Users/Glo/PycharmProjects/Py_school')
+directory_obj = Directory(current_dir)
 # Створення словника імен файлів та директорій для вказаної директорії
 directory_dict = directory_obj.create_directory_dict()
 print(directory_dict)
 # Створення об'єкту класу Directory та відсортування імен файлів та директорій у порядку зрозтання
-dir = Directory('C:/Users/Glo/PycharmProjects/Py_school')
+dir = Directory(current_dir)
 sorted_dict = dir.sort_directory_dict()
 print(sorted_dict)
 # Створення об'єкту класу Directory та відсортування імен файлів та директорій у порядку REVER
